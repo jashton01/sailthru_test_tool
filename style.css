@@ -1,0 +1,180 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000732;
+    color: #FFFFFF;
+}
+
+button {
+    white-space: normal;
+}
+
+div {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+label {
+    margin-bottom: 1em;
+    display: block;
+}
+
+a:link, a:visited {
+    color: #00CCED;
+}
+
+a:hover {
+    color: #FF7200;
+    text-decoration: none;
+}
+
+#footer {
+    margin-top: 5em;
+}
+
+#emblem {
+    height: 5em;
+    width: auto;
+}
+
+#logo {
+    height: 3em;
+    width: auto;
+}
+
+#metro {
+    margin-left: 1em;
+}
+
+#options {
+    margin-top: 2.5em;
+}
+
+.button_link {
+    text-decoration: none;
+}
+
+.retr_blurb {
+    color: #FF7200;
+}
+
+.note {
+    font-weight: bold;
+    color: #87878A;
+}
+
+.optional, .required {
+    color: #00CCED;
+}
+
+.optional {
+    padding-top: 2em;
+}
+
+.required {
+    padding-top: 1em;
+}
+
+.test_module {
+    margin-top: 2.5em;
+}
+
+.submit_button {
+    border-style: solid;
+    font-size: 1em;
+    width: 8em;
+    padding: 2em;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    background-color: #00CCED;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: .5em;
+}
+
+.submit_button:hover {
+    border-color: #00CCED;
+    color: #00CCED;
+    background-color: #FFFFFF;
+}
+
+/* .dropdown {
+    display: none;
+} */
+
+@media only screen and (max-width: 768px) {
+    #main {
+        float: none;
+        margin: auto;
+        padding-bottom: 2em;
+    }
+
+    #options {
+        margin-top: 1.5em;
+    }
+
+    #intro, #emblem {
+        display: none;
+    }
+    
+    .submit_button {
+        display: block;
+        margin: auto;
+        width: 50%;
+        margin-bottom: .5em;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    input, select {
+        width: 10em;
+    }
+    
+    #main {
+        float: none;
+        margin: auto;
+        padding-bottom: 2em;
+    }
+
+    #options {
+        margin-top: 1.5em;
+    }
+
+    #intro, #emblem {
+        display: none;
+    }
+
+    #logo {
+        height: 1.5em;
+        width: auto;
+    }
+    
+    .submit_button {
+        display: block;
+        margin: auto;
+        width: 100%;
+        margin-bottom: .5em;
+    }
+}

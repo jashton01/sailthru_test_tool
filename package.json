@@ -1,0 +1,24 @@
+{
+  "name": "sailthru_test_tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node scripts/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevedoesitall/sailthru_test_tool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevedoesitall/sailthru_test_tool/issues"
+  },
+  "homepage": "https://github.com/stevedoesitall/sailthru_test_tool#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "sailthru-client": "^3.0.2"
+  }
+}

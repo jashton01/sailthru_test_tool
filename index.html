@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sailthru Academy Test Tool</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+        <link rel="shortcut icon" href="https://getstarted.sailthru.com/wp-content/themes/sailthru-docs/img/favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    </head>
+    <body>
+        <div id="header">
+            <h1>Welcome to the Sailthru API Test Tool!</h1>
+
+            <p id="intro"><span class="note">Note:</span> This tool allows you to make an API POST to the <a href="https://getstarted.sailthru.com/developers/api/user/" target="_blank">user</a>, <a href="https://getstarted.sailthru.com/developers/api/event/" target="_blank">event</a>, <a href="https://getstarted.sailthru.com/developers/api/content/" target="_blank">content</a>, <a href="https://getstarted.sailthru.com/developers/api/purchase/" target="_blank">purchase</a>/<a href="https://getstarted.sailthru.com/developers/api/return/" target="_blank">return</a>, and <a href="https://getstarted.sailthru.com/developers/api/send/" target="_blank">send</a> endpoints!</p>
+        </div>
+        <div id="main">
+            <div class="test_module" id="api_tester">
+                <h2>Select Your Endpoint:</h2>
+                <a class="button_link" href="#options"><button id="user" class="submit_button select_button">User</button></a>
+                <a class="button_link" href="#options"><button id="event" class="submit_button select_button">Event</button></a>
+                <a class="button_link" href="#options"><button id="content" class="submit_button select_button">Content</button></a>
+                <a class="button_link" href="#options"><button id="purchase" class="submit_button select_button">Purchase</button></a>
+                <a class="button_link" href="#options"><button id="send" class="submit_button select_button">Send</button></a>
+            </div>
+        </div>
+        <div id="options">
+                
+            <div id="send_post" class="content_block">
+                    <h3>Send API</h3>
+
+                    <p class="note required">Required:</p>
+
+                    <label>Email Address: <input name="email" type="text" id="send_email"/></label>
+                    <div id="send_dropdown" class="dropdown">
+                            <label>Template Name: <select id="send_templates"></select></label>
+                    </div> 
+                            <div id="retr_message">
+                                    <p class="retr_blurb">Retrieving templates, please wait...</p>
+                            </div>
+                    <p class="note optional">Optional:</p>
+
+                    <label>Var Name: <input name="send_var" type="text" id="send_var"/></label>           
+                    <label>Var Value: <input name="send_val" type="text" id="send_val"/></label>           
+                    <label>CC Email: <input class="optional_email" name="CC" type="text" id="send_cc"/></label>         
+                    <label>BCC Email: <input class="optional_email" name="BCC" type="text" id="send_bcc"/></label>          
+                    <label>Reply-To Email: <input class="optional_email" name="Reply-To" type="text" id="send_replyto"/></label>          
+                    <label>Behalf Of Email: <input class="optional_email" name="Behalf Of" type="text" id="send_behalfof"/></label>
+                    
+                    <button class="submit_button confirm_button" id="send_submit">Send</button>
+            </div>
+        
+            <div id="user_post" class="content_block">
+
+                    <h3>User API</h3>
+            
+                    <p class="note required">Required:</p>
+                    
+                    <label>Email Address: <input name="email" type="text" id="user_email"/></label>
+                    <div id="user_dropdown" class="dropdown">
+                            <label>List Name: <select id="user_lists"></select></label> 
+                    </div>
+                            <div id="retr_message">
+                                    <p class="retr_blurb">Retrieving lists, please wait...</p>
+                            </div>
+                    <p class="note optional">Optional:</p>
+                    
+                    <label>Var Name: <input name="user_var" type="text" id="user_var"/></label>
+                    <label>Var Value: <input name="user_val" type="text" id="user_val"/></label>
+                    <label>SMS: <input name="sms" type="number" id="user_sms" class="user_keys"/></label>
+                    <label>EXTID: <input name="extid" type="text" id="user_extid" class="user_keys"/></label>
+                    <!-- <label>Change Email: <input name="user_change" type="text" id="user_change" class="user_key"/></label> -->
+                    <label>
+                            Optout Status:
+                            <select id="user_status">
+                                    <option value="none">Valid</option>
+                                    <option value="basic">Marketing Emails</option>
+                                    <option value="all">All Emails</option>
+                            </select>
+                    </label>  
+                    <button class="submit_button confirm_button" id="user_submit">Sign Up</button>
+            </div>
+
+            <div id="purchase_post" class="content_block">
+                    <h3>Purchase API</h3>
+            
+                    <p class="note required">Required:</p>
+            
+                    <label>Email Address: <input name="email" type="text" id="purchase_email"/></label>
+                    <label>URL: <input name="purchase_url" type="text" id="purchase_url"/></label>
+                    <label>Title: <input name="purchase_title" type="text" id="purchase_title"/></label>
+                    <label>Quantity: <input name="purchase_qty" type="number" id="purchase_qty"/></label>
+                    <label>Price <span class="note">(in Cents)</span>: <input name="purchase_price" type="number" id="purchase_price"/></label>
+            
+                    <p class="note optional">Optional <span class="note">(Add/Purchase)</span>:</p>
+                    <label>Tags <span class="note">(Comma Delineate)</span>: <input name="purchase_tags" type="text" id="purchase_tags"/></label>
+                    <label>Image URL: <input name="image" type="text" id="purchase_image"/></label>
+                    <label>Item Var Name: <input name="item_var" type="text" id="purchase_var"/></label>
+                    <label>Item Var Value: <input name="item_val" type="text" id="purchase_val"/></label>
+                    <label>Order Var Name: <input name="order_var" type="text" id="purchase_ordervar"/></label>
+                    <label>Order Var Value: <input name="order_val" type="text" id="purchase_orderval"/></label>
+                    <label>Discount: <input name="discount" type="number" id="purchase_discount" class="purchase_adjustments"/></label>
+                    <label>Tax: <input name="tax" type="number" id="purchase_tax" class="purchase_adjustments"/></label>
+                    <label>Message ID: <input name="message_id" type="text" id="purchase_messageid"/></label>
+            
+                    <button class="purchase_submit submit_button confirm_button" id="incomplete_purchase">Add</button>
+                    <button class="purchase_submit submit_button confirm_button" id="complete_purchase">Purchase</button>
+                    <button class="purchase_submit submit_button confirm_button" id="return_purchase">Return</button>
+                    <button class="purchase_submit submit_button confirm_button" id="clear_purchase">Clear</button>
+            </div>
+
+            <div id="event_post" class="content_block">
+                    <h3>Event API</h3>
+            
+                    <p class="note required">Required:</p>
+                    <label>Email Address: <input name="email" type="text" id="event_email"/></label>
+                    <label>Event Name: <input name="event_name" type="text" id="event_name"/></label>
+            
+                    <p class="note optional">Optional:</p>
+                    <label>Var Name: <input name="event_var" type="text" id="event_var"/></label>
+                    <label>Var Value: <input name="event_val" type="text" id="event_val"/></label>
+                  
+                    <button class="submit_button confirm_button" id="event_submit">Trigger</button>
+            </div>
+
+            <div id="content_post" class="content_block">
+
+                    <h3>Content API</h3>
+            
+                    <p class="note required">Required:</p>
+                    
+                    <label>URL: <input name="content_url" type="text" id="content_url"/></label>
+                    <label>Title: <input name="content_title" type="text" id="content_title"/></label>
+                    
+                    <p class="note optional">Optional:</p>
+                    <label>Tags <span class="note">(Comma Delineate)</span>: <input name="content_tags" type="text" id="content_tags"/></label>
+                    <label>Image URL: <input name="content_image" type="text" id="content_image"/></label>
+                    <label>Var Name: <input name="content_var" type="text" id="content_var"/></label>
+                    <label>Var Value: <input name="content_val" type="text" id="content_val"/></label>
+                    <label>Publish Date: <input name="content_date" type="date" id="content_date"/></label>
+                    <label>Expire Date: <input name="content_expire" type="date" id="content_expire"/></label>
+                    <label>Location <span class="note">(Comma Delineate)</span>: <input name="content_location" type="text" id="content_location"/></label>
+                    <label>Price <span class="note">(in Cents)</span>: <input name="content_price" type="number" id="content_price"/></label>
+                    <label>Site Name: <input name="content_site" type="text" id="content_site"/></label>
+                    <label>Author: <input name="content_author" type="text" id="content_author"/></label>
+            
+                    <button class="submit_button confirm_button content_submit" id="publish_submit">Publish</button>
+                    <button class="submit_button confirm_button content_submit" id="respider_submit">Respider</button>
+            </div>
+
+            <div id="browse_post" class="content_block">
+        
+                    <h3>Browse Abandon</h3>
+            
+                    <label>Email Address: <input name="email" type="text" id="browse_email"/></label>
+            
+                    <button class="submit_button confirm_button" id="browse_submit">Submit</button>
+            </div>
+
+            <div id="cart_post" class="content_block">
+
+                    <h3>Cart Abandon</h3>
+            
+                    <label>Email Address: <input name="email" type="text" id="cart_email"/></label>
+            
+                    <button class="submit_button confirm_button" id="cart_submit">Submit</button>
+            </div>
+
+        </div>
+ 
+        <div id="footer">
+            <a href="https://www.sailthru.com/" target="_blank"><img id="logo" src="https://media.sailthru.com/2y8/1k2/6/o/5b305cf5d2338.png" alt="Sailthru Logo"></a>
+        </div>
+
+    </body>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/main.js"></script>
+</html>
