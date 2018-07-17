@@ -1,18 +1,10 @@
 $( document ).ready(function() {
     const user_lists = [];
-    const non_master_lists = [];
-    const master_lists = [];
-    const master_lists_sorted = [];
     const send_templates = [];
-    let all_lists = []
 
 clear_array = function() {
     user_lists.length = 0;
-    non_master_lists.length = 0;
-    master_lists.length = 0;
-    master_lists_sorted.length = 0;
     send_templates.length = 0;
-    all_lists.length = 0;
 }
 
 get_data = ( function() {
@@ -24,8 +16,6 @@ get_data = ( function() {
         success: function(data) {
             
             const status = "active";
-            const list_convention = "Master List ";
-            const list_length = list_convention.length;    
             const data_lists = data.lists;
             data_lists.forEach(list => {
                 if (list.vars && list.vars.status == status) {
@@ -38,31 +28,10 @@ get_data = ( function() {
                 return (text_a < text_b) ? -1 : (text_a > text_b) ? 1 : 0;
             });
 
-            user_lists.forEach(list => {
-                const list_name = list.name;
-                if (list_name.indexOf(list_convention) == -1) {
-                    non_master_lists.push(list_name);
-                }
-                else {
-                    const master_list = parseInt(list_name.substr(list_name.indexOf(list_convention)+list_length));
-                    master_lists.push(master_list);
-                }
-            });
-
-            master_lists.sort(function(a, b) {
-                return a - b
-            });
-            
-            master_lists.forEach(list_num => {
-                master_lists_sorted.push(`${list_convention} ${list_num}`);
-            });
-
-            all_lists = non_master_lists.concat(master_lists_sorted);
-
             const lists_list = document.getElementById("user_lists");
-            console.log(all_lists);
+            console.log(user_lists);
             if (!lists_list.length > 0) {
-                all_lists.forEach(list => {
+                user_lists.forEach(list => {
                     $("#user_lists").append('<option value="'+ list + '">' + list + "</option>");
                 });
             }
@@ -80,7 +49,7 @@ get_data = ( function() {
         url: "/email",
         data: { id : "templates", data : "{}" },
         success: function(data) {
-            const label = "testers";
+            const label = "active";
             const all_templates = data.templates;
             all_templates.forEach(template => {
                 if (template.labels && template.labels.includes(label)) {
@@ -139,8 +108,8 @@ $(content_blocks).hide();
         const send_replyto = $("#" + id + "_replyto").val();
         const send_behalfof = $("#" + id + "_behalfof").val();
     
-        if (email == "s") {
-            email = "steve@sailthru.com";
+        if (email == "j") {
+            email = "jashton@sailthru.com";
         }
         
         if (email == "") {
