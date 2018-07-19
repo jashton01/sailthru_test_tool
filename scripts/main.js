@@ -22,11 +22,11 @@ get_data = ( function() {
                     user_lists.push({"name": list.name});
                 }
             });
-            user_lists.sort(function(a, b) {
-                const text_a = a.name.toUpperCase();
-                const text_b = b.name.toUpperCase();
-                return (text_a < text_b) ? -1 : (text_a > text_b) ? 1 : 0;
-            });
+            // user_lists.sort(function(a, b) {
+            //     const text_a = a.name.toUpperCase();
+            //     const text_b = b.name.toUpperCase();
+            //     return (text_a < text_b) ? -1 : (text_a > text_b) ? 1 : 0;
+            // });
 
             const lists_list = document.getElementById("user_lists");
             console.log(user_lists);
