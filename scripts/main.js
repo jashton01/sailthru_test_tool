@@ -32,7 +32,7 @@ get_data = ( function() {
             console.log(user_lists);
             if (!lists_list.length > 0) {
                 user_lists.forEach(list => {
-                    $("#user_lists").append('<option value="'+ list + '">' + list + "</option>");
+                    $("#user_lists").append('<option value="'+ list.name + '">' + list.name + "</option>");
                 });
             }
 
