@@ -367,10 +367,7 @@ $(content_blocks).hide();
             data.returned = returned;
     
             if (tags) {
-                data.tags = tags.split(",").concat(tag_name);
-            }
-            else {
-                data.tags = tag_name;
+                data.tags = tags.split(",");
             }
     
             if (ordervar && orderval) {
@@ -598,10 +595,7 @@ $(content_blocks).hide();
             }
     
             if (tags) {
-                data.tags = tags.split(",").concat(tag_name);
-            }
-            else {
-                data.tags = tag_name;
+                data.tags = tags.split(",");
             }
     
     
