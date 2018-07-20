@@ -300,8 +300,6 @@ $(content_blocks).hide();
         const adjustments = document.querySelectorAll(".purchase_adjustments");
         console.log("Adjustments length", adjustment_length);
     
-        const tag_name = [];
-        tag_name.push("academy-days");
     
         let incomplete;
         let returned;
@@ -530,8 +528,7 @@ $(content_blocks).hide();
         const author = $("#" + id + "_author").val();
         const content_var = $("#" + id + "_var").val();
         const content_val = $("#" + id + "_val").val();
-        const tag_name = [];
-        tag_name.push("academy-days");
+
     
         if (!url) {
             alert("Please enter a URL.");
